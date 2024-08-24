@@ -1,11 +1,13 @@
 #' nmf_pull_components
+#' @description
+#' This function takes the output of an NMF run which are the A and P matrix, and performs common transformations that are used for downstram visualization.
 #'
 #' @param nmf.object NMF object outputed from either the NMF package or the CoGAPs package
 #'
 #' @return Returns a list of NMF outputs, including the A and P matrix, Scaled values, Maximum P values per column, colors assigned to each pattern.
 #' @export
 #'
-#' @examples
+#' @examples nmf_pull_components(NMF_object)
 nmf_pull_components <- function(nmf.object){
 
   output <- list()
@@ -62,7 +64,7 @@ nmf_pull_components <- function(nmf.object){
     pattern.cols <- custom.cols[1:nPatterns]
   }
   if(nPatterns > 16){
-    cols <- colorRampPalette(custom.cols)
+    cols <- grDevices::colorRampPalette(custom.cols)
     pattern.cols <- cols(nPatterns)
   }
   names(pattern.cols) <- paste0("Pattern_",1:nPatterns)

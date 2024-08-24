@@ -14,5 +14,6 @@ BugReports: https://github.com/rmelias2/NMFhelper/issues
 Imports: 
     CoGAPS,
     dplyr,
+    grDevices,
     NMF,
     RColorBrewer
